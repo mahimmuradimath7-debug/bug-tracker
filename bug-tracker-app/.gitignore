@@ -1,0 +1,5 @@
+node_modules/
+.env
+tmp/
+android/
+.DS_Store

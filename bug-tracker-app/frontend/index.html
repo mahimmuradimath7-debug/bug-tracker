@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bug Tracker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="auth-wrap" id="authWrap">
+    <div class="auth-card">
+      <div style="text-align: center; margin-bottom: 24px;">
+        <img src="logo-wordmark.svg" alt="Bug Tracker Logo" class="auth-logo">
+      </div>
+      <h2>Welcome Back</h2>
+      <p class="sub" style="margin-bottom: 20px;">Sign in to access the bug tracker.</p>
+      
+      <div class="field">
+        <input type="text" id="authEmail" placeholder="Email address">
+      </div>
+      <div class="field">
+        <input type="password" id="authPassword" placeholder="Password" class="auth-input">
+      </div>
+      <div id="authError" class="auth-error hidden"></div>
+      
+      <div class="auth-buttons">
+        <button class="primary" id="btnSignIn" style="flex:1">Sign In</button>
+        <button class="ghost" id="btnSignUp" style="flex:1">Register</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap hidden" id="mainWrap">
+    <button class="ghost" id="btnSignOut" style="position:absolute; top:28px; right:20px;">Sign Out</button>
+    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px;">
+      <img src="logo-icon.svg" alt="Icon" class="main-logo-icon">
+      <img src="logo-wordmark.svg" alt="Bug Tracker" class="main-logo-wordmark">
+    </div>
+    <p class="sub">Point this at a public GitHub repo or a zip file. It reads the source, sends each file to Gemini for review, and tracks whatever it finds.</p>
+
+    <div class="panel" id="pastScansPanel">
+      <div class="panel-title">Past scans</div>
+      <div id="pastScansList" class="past-scans-list"></div>
+    </div>
+
+    <div class="panel" id="inputPanel">
+      <div class="tabs">
+        <div class="tab active" data-tab="github">github url</div>
+        <div class="tab" data-tab="zip">zip upload</div>
+        <div class="tab" data-tab="raw">raw code</div>
+      </div>
+
+      <div id="tab-github">
+        <div class="field">
+          <input type="text" id="githubUrl" placeholder="https://github.com/owner/repo">
+        </div>
+      </div>
+
+      <div id="tab-zip" class="hidden">
+        <div class="dropzone" id="dropzone">
+          drop a .zip here, or click to choose a file
+          <div class="filename" id="zipName"></div>
+        </div>
+        <input type="file" id="zipInput" accept=".zip" style="display:none">
+      </div>
+
+      <div id="tab-raw" class="hidden">
+        <div class="field">
+          <textarea id="rawCodeInput" placeholder="Paste your raw code here..." rows="8"></textarea>
+        </div>
+      </div>
+
+      <button class="primary" id="scanBtn">Scan for bugs</button>
+      <div class="limits">Scans up to 20 source files (largest files and heavy/vendor/build folders are skipped) and truncates very long files. This is an AI-assisted first pass, not a guarantee — pair it with tests and a human review.</div>
+    </div>
+
+    <div class="panel hidden" id="progressPanel">
+      <div class="progress-outer"><div class="progress-inner" id="progressBar" style="width:0%"></div></div>
+      <div class="log" id="logBox"></div>
+    </div>
+
+    <div id="resultsArea" class="hidden">
+      <div class="summary" id="summaryChips"></div>
+      <div class="toolbar">
+        <input type="text" id="searchBox" placeholder="search bugs, files, keywords...">
+        <select id="statusFilter">
+          <option value="all">all statuses</option>
+          <option value="open">open only</option>
+          <option value="resolved">resolved only</option>
+        </select>
+      </div>
+      <div id="bugList"></div>
+    </div>
+
+    <div class="disclaimer">
+      AI-generated review — may miss real bugs or flag non-issues. Scans are saved on the backend, so past results are always here in the list above.<br><br>
+      <strong>Developed by Mahim.s.Muradimath</strong>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="app.js"></script>
+</body>
+</html>

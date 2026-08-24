@@ -1,0 +1,24 @@
+<svg viewBox="0 0 640 200" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(20,20) scale(0.625)">
+    <rect width="256" height="256" rx="56" fill="#1F4D3D"/>
+    <line x1="112" y1="66" x2="96" y2="40" stroke="#F6F5F0" stroke-width="6" stroke-linecap="round"/>
+    <line x1="144" y1="66" x2="160" y2="40" stroke="#F6F5F0" stroke-width="6" stroke-linecap="round"/>
+    <circle cx="96" cy="38" r="6" fill="#F6F5F0"/>
+    <circle cx="160" cy="38" r="6" fill="#F6F5F0"/>
+    <circle cx="128" cy="86" r="26" fill="#F6F5F0"/>
+    <path d="M80 130 Q50 122 34 108" stroke="#F6F5F0" stroke-width="7" fill="none" stroke-linecap="round"/>
+    <path d="M76 160 Q44 158 26 158" stroke="#F6F5F0" stroke-width="7" fill="none" stroke-linecap="round"/>
+    <path d="M80 190 Q50 198 34 212" stroke="#F6F5F0" stroke-width="7" fill="none" stroke-linecap="round"/>
+    <path d="M176 130 Q206 122 222 108" stroke="#F6F5F0" stroke-width="7" fill="none" stroke-linecap="round"/>
+    <path d="M180 160 Q212 158 230 158" stroke="#F6F5F0" stroke-width="7" fill="none" stroke-linecap="round"/>
+    <path d="M176 190 Q206 198 222 212" stroke="#F6F5F0" stroke-width="7" fill="none" stroke-linecap="round"/>
+    <ellipse cx="128" cy="160" rx="52" ry="62" fill="#F6F5F0"/>
+    <path d="M78 140 Q128 156 178 140" stroke="#1F4D3D" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.45"/>
+    <path d="M82 178 Q128 196 174 178" stroke="#1F4D3D" stroke-width="5" fill="none" stroke-linecap="round" opacity="0.45"/>
+    <circle cx="168" cy="146" r="15" fill="#B15A0F"/>
+    <circle cx="168" cy="146" r="15" fill="none" stroke="#F6F5F0" stroke-width="3"/>
+  </g>
+
+  <text x="222" y="108" font-family="'Space Grotesk', 'Segoe UI', sans-serif" font-weight="700" font-size="52" letter-spacing="-1" fill="#1C1F26">Bug Tracker</text>
+  <text x="224" y="138" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="15" letter-spacing="2" fill="#6B6F76">// CODE INSPECTION</text>
+</svg>

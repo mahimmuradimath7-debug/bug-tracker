@@ -1,0 +1,23 @@
+{
+  "name": "bug-tracker-backend",
+  "version": "1.0.0",
+  "description": "Scans a GitHub repo or zip upload for bugs using the Anthropic API, serves the frontend and a small REST/SSE API.",
+  "main": "server.js",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "@google/genai": "^2.18.0",
+    "@supabase/supabase-js": "^2.112.4",
+    "adm-zip": "^0.6.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "multer": "^2.2.0",
+    "zod": "^4.4.3"
+  }
+}

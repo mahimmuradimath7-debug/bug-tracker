@@ -1,0 +1,9 @@
+node_modules/
+backend/node_modules/
+.env
+backend/.env
+android/
+tmp/
+data/
+._*
+.DS_Store
